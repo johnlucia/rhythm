@@ -28,6 +28,13 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+# GENERAL APP STUFF
+
+gem 'dotenv-rails', :groups => [:development, :test]
+gem 'twitter'
+gem 'instagram'
+gem 'httparty'
+
 # REFINERY STUFF
 gem 'refinerycms', github: 'refinery/refinerycms', branch: 'master'
 gem 'refinerycms-i18n', github: 'refinery/refinerycms-i18n', branch: 'master'
