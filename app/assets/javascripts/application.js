@@ -14,3 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+//= require galleria/galleria-1.4.2.min.js
+//= require slideshow

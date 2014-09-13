@@ -16,9 +16,18 @@ class SocialFeedController < ApplicationController
 
   def instagram
     response = HTTParty.get("https://api.instagram.com/v1/users/1493863880/media/recent?client_id=#{ENV['INSTAGRAM_CLIENT_ID']}")
-    @instagram = response.body
+    instagram_data = JSON.parse response.body
+    posts = instagram_data['data']
+    images = []
+    posts.each do |post|
+      image = {}
+      image[:image] = post['images']['low_resolution']['url']
+      image[:thumb] =  post['images']['thumbnail']['url']
+      image[:big] =  post['images']['standard_resolution']['url']
+      images << image
+    end
 
-    render json: @instagram
+    render json: images.to_json
   end
 
   def combined
