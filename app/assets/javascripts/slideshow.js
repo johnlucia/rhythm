@@ -6,7 +6,12 @@ $(document).ready(function(){
     Galleria.run('.galleria', {
       dataSource: data,
       imageCrop: false,
-      transition: 'fade'
+      transition: 'fade',
+      height: 1,
+      thumbnails: 'empty',
+      autoplay: 7000,
+      imageCrop: 'width',
+      showCounter: false
     });
   });
 
