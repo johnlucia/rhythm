@@ -18,3 +18,10 @@
 
 h3{color:red;}
 .galleria{ width: 700px; height: 400px; background: #000 }
+
+
+#map-canvas{
+  position:relative;
+  width:100%;
+  height:400px;
+}

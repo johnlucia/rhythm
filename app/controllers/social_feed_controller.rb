@@ -24,6 +24,9 @@ class SocialFeedController < ApplicationController
       image[:image] = post['images']['low_resolution']['url']
       image[:thumb] =  post['images']['thumbnail']['url']
       image[:big] =  post['images']['standard_resolution']['url']
+
+      image[:latitude] = post['location']['latitude']
+      image[:longitude] = post['location']['longitude']
       images << image
     end
 
