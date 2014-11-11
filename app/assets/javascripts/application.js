@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+
+// This turbolinks crap is LAME! = require turbolinks
+
 //= require_tree .
 
 //= require galleria/galleria-1.4.2.min.js

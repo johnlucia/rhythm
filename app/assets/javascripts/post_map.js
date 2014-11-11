@@ -1,42 +1,43 @@
 $(document).ready(function(){
-
-  var mapData= $.getJSON( "/instagram_feed", function(data) {
-    setUpMap(data);
-  });
-
+  if ($('#map-canvas').length){
+    var mapData= $.getJSON( "/instagram_feed", function(data) {
+      setUpMap(data);
+    });
+  }
 
   function setUpMap(mapData) {
 
     var markerBounds = new google.maps.LatLngBounds();
     var mapOptions = {
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      scrollwheel: false
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+      // scrollwheel: false <= add this option to turn off scrolling and stuff
     };
 
-    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
     
     var markers = [];
 
     for(var i = 0; i < mapData.length; i++) {
       var post = mapData[i];
-      console.log(post.latitude);
-      console.log(post.longitude);
-      console.log(post.thumb);
+      // console.log(post.latitude);
+      // console.log(post.longitude);
+      // console.log(post.thumb);
 
       var coordinates = new google.maps.LatLng(post.latitude, post.longitude)
 
       var markerImage = new google.maps.MarkerImage(
         post.thumb,
-        null, /* size is determined at runtime */
-        null, /* origin is 0,0 */
-        null, /* anchor is bottom center of the scaled image */
+        null, 
+        null,  
+        null, 
         new google.maps.Size(60, 60)
-      );  
+      );
 
       var marker = new google.maps.Marker({
         position: coordinates,
         icon: markerImage,
-        url: post.big
+        url: post.big,
+        map: map
       });
 
       google.maps.event.addListener(marker, 'click', function() {
@@ -49,7 +50,6 @@ $(document).ready(function(){
     }
 
     map.fitBounds(markerBounds);
-    var markerCluster = new MarkerClusterer(map, markers);
-
+    // var markerCluster = new MarkerClusterer(map, markers);
   }
 });
