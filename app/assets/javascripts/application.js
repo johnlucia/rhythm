@@ -17,3 +17,5 @@
 
 //= require galleria/galleria-1.4.2.min.js
 //= require slideshow
+//= require menu
+
