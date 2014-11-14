@@ -9,8 +9,9 @@ $(document).ready(function(){
 
     var markerBounds = new google.maps.LatLngBounds();
     var mapOptions = {
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-      // scrollwheel: false <= add this option to turn off scrolling and stuff
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      scrollwheel: false,
+      disableDefaultUI: true
     };
 
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -48,6 +49,18 @@ $(document).ready(function(){
 
       markerBounds.extend(coordinates);
     }
+
+    function enableScrollingWithMouseWheel() {
+      map.setOptions({ scrollwheel: true });
+    }
+
+    function disableScrollingWithMouseWheel() {
+      map.setOptions({ scrollwheel: false });
+    }
+
+    google.maps.event.addListener(map, 'mousedown', function(){
+      enableScrollingWithMouseWheel()
+    });
 
     map.fitBounds(markerBounds);
     // var markerCluster = new MarkerClusterer(map, markers);
