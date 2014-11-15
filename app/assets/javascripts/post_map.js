@@ -17,6 +17,7 @@ $(document).ready(function(){
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
     
     var markers = [];
+    var infowindows = []
 
     for(var i = 0; i < mapData.length; i++) {
       var post = mapData[i];
@@ -34,18 +35,21 @@ $(document).ready(function(){
         new google.maps.Size(60, 60)
       );
 
-      var marker = new google.maps.Marker({
+      markers[i] = new google.maps.Marker({
         position: coordinates,
         icon: markerImage,
         url: post.big,
-        map: map
+        map: map,
+        index: i
       });
 
-      google.maps.event.addListener(marker, 'click', function() {
-        window.location.href = this.url;
+      infowindows[i] = new google.maps.InfoWindow({
+        content: "<div class='map-info-window'>Gigity gigity gigity</div>"
       });
-
-      markers.push(marker);
+      
+      google.maps.event.addListener(markers[i], 'click', function() {
+        infowindows[this.index].open(map,markers[this.index]);
+      });
 
       if (i <= 5 || !$('#home-page').length) {
         markerBounds.extend(coordinates);
