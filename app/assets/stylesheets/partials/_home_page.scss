@@ -1,0 +1,43 @@
+.map-link{
+  display:block;
+  position:absolute;
+  top:-30px;
+  left:-5px;
+  width:129px;
+  padding:10px;
+  background:#000;
+  color:#fff;
+  box-sizing: content-box;
+  &:hover{
+    text-decoration:none;
+    border:2px solid red;
+    top:-32px;
+    left:-7px;
+  }
+  span{
+    display:block;
+    float:right;
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid white;
+  }
+}
+
+.home-content{width:50%; position:relative; float:left; padding:0 15px 10px 10px;}
+.home-slideshow{width:50%; position:relative; float:right;}
+
+.home-row-2{
+  position:relative;
+  width:100%;
+  float:left;
+  padding:15px 0;
+}
+
+#map-canvas{
+  position:relative;
+  height:400px;
+  width:100%;
+  div img{display:block; border-radius:5px;}
+}

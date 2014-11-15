@@ -1,0 +1,51 @@
+*{box-sizing: border-box;}
+
+html { 
+  background: url(/images/full-shot-1.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size:18px;
+}
+
+h1{
+  font-size:150%;
+  font-weight:bold;
+  padding:10px 0;
+}
+
+h2{
+  font-size:125%;
+  font-weight:bold;
+  padding:10px 0;
+}
+
+h3{
+  font-size:115%;
+  font-weight:bold;
+  padding:10px 0;
+}
+
+p{
+  padding:5px 0;
+}
+
+a{
+  color:#000;
+  text-decoration: none;
+  &:hover{ text-decoration: underline; }
+}
+
+#page{
+  max-width:1000px;
+  margin:0 auto;
+  padding:0 10px 10px 10px;
+  background-color:rgba(255,255,255, 0.8)
+}
+
+#body_content{width:100%; clear:both;}
+
+footer{width:100%; clear:both; text-shadow: 1px 1px #ffffff; text-align:center; }

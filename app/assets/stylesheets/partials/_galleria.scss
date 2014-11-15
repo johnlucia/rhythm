@@ -1,0 +1,33 @@
+.galleria{ 
+  width: 100%;
+  background: transparent; 
+  .galleria-theme-classic{background: transparent;}
+  span.img{display:inline-block; margin:5px; height:5px; width:5px;}
+  .galleria-thumbnails-list{ text-align:center; }
+  .galleria-thumbnails{ text-align:center; display:inline-block; }
+  .galleria-theme-classic .galleria-thumbnails .galleria-image{
+    display:inline-block;
+    height:20px; 
+    width:20px;
+    border-radius:10px;
+    border:1px solid #fff;
+  }
+  .galleria-theme-classic .galleria-stage {
+    position: absolute;
+    top: 0;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+  }
+  .galleria-theme-classic .galleria-thumbnails .galleria-image.active{ opacity:0.5; }
+  .photo-caption {
+    position:absolute;
+    width: 100%;
+    text-align:center;
+    background-color:rgba(0,0,0, 0.5);
+    padding:3px;
+    color:#fff;
+
+  }
+}
