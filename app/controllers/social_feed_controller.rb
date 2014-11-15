@@ -21,7 +21,8 @@ class SocialFeedController < ApplicationController
     images = []
     posts.each do |post|
       image = {}
-      image[:image] = post['images']['low_resolution']['url']
+      image[:small_image] = post['images']['low_resolution']['url']
+      image[:image] = post['images']['standard_resolution']['url']
       image[:thumb] =  post['images']['thumbnail']['url']
       image[:big] =  post['images']['standard_resolution']['url']
       image[:layer] = "<div class='photo-caption'>#{post['caption']['text']}</div>" if post['caption']
