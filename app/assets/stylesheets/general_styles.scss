@@ -6,7 +6,40 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size:18px;
 }
+
+h1{
+  font-size:150%;
+  font-weight:bold;
+  padding:10px 0;
+}
+
+h2{
+  font-size:125%;
+  font-weight:bold;
+  padding:10px 0;
+}
+
+h3{
+  font-size:115%;
+  font-weight:bold;
+  padding:10px 0;
+}
+
+p{
+  padding:5px 0;
+}
+
+a{
+  color:#000;
+  text-decoration: none;
+  &:hover{ text-decoration: underline; }
+}
+
+
 
 #header{
   position:absolute;
@@ -83,6 +116,13 @@ html {
   background-color:rgba(255,255,255, 0.8)
 }
 
+.feeds{
+  position:relative;
+  width:100%;
+  float:left;
+  padding:15px 0;
+}
+
 #map-canvas{
   position:relative;
   height:400px;
@@ -108,10 +148,41 @@ h3{color:red;}
     border-radius:10px;
     border:1px solid #fff;
   }
+  .galleria-theme-classic .galleria-stage {
+    position: absolute;
+    top: 0;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+  }
   .galleria-theme-classic .galleria-thumbnails .galleria-image.active{ opacity:0.5; }
 }
 
-.social-media-feed{width:50%; position:relative; float:left;}
+.map-link{
+  display:block;
+  position:absolute;
+  top:-30px;
+  left:-5px;
+  width:129px;
+  padding:10px;
+  background:#000;
+  color:#fff;
+  &:hover{
+    text-decoration:none;
+    background:#333;
+  }
+  span{
+    display:block;
+    float:right;
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid white;
+  }
+}
+.social-media-feed{width:50%; position:relative; float:left; padding:0 15px 10px 10px;}
 .home-slideshow{width:50%; position:relative; float:right;}
 #body_content{width:100%; clear:both;}
 
