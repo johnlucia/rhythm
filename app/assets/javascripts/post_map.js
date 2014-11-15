@@ -47,7 +47,7 @@ $(document).ready(function(){
 
       markers.push(marker);
 
-      if (i <= 5) {
+      if (i <= 5 || !$('#home-page').length) {
         markerBounds.extend(coordinates);
       }
     }
