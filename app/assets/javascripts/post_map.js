@@ -18,6 +18,7 @@ $(document).ready(function(){
     
     var markers = [];
     var infowindows = []
+    var currentInfowindow = 0
 
     for(var i = 0; i < mapData.length; i++) {
       var post = mapData[i];
@@ -43,11 +44,20 @@ $(document).ready(function(){
         index: i
       });
 
+      var lat = Math.round(post.latitude * 100) / 100;
+      var lon = Math.round(post.longitude * 100) / 100;
+      var caption = post.layer
+      if(typeof post.layer === 'undefined'){
+        caption = ""  
+      };
+      var infowindowContent = "<div class='map-info-window'><img src='"+ post.small_image +"' />"+ caption +"<p>Lat:"+ lat +" Long:"+ lon +"</p></div>";
       infowindows[i] = new google.maps.InfoWindow({
-        content: "<div class='map-info-window'>Gigity gigity gigity</div>"
+        content: infowindowContent
       });
       
       google.maps.event.addListener(markers[i], 'click', function() {
+        infowindows[currentInfowindow].close()
+        currentInfowindow = this.index
         infowindows[this.index].open(map,markers[this.index]);
       });
 
