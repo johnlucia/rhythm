@@ -87,6 +87,6 @@ $(document).ready(function(){
     });
 
     map.fitBounds(markerBounds);
-    // var markerCluster = new MarkerClusterer(map, markers);
+    var markerCluster = new MarkerClusterer(map, markers);
   }
 });
