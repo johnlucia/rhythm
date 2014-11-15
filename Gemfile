@@ -8,7 +8,7 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-gem 'spring',        group: :production
+gem 'pg',        group: :production
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
