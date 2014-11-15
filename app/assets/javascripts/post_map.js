@@ -47,7 +47,9 @@ $(document).ready(function(){
 
       markers.push(marker);
 
-      markerBounds.extend(coordinates);
+      if (i <= 5) {
+        markerBounds.extend(coordinates);
+      }
     }
 
     function enableScrollingWithMouseWheel() {
@@ -60,6 +62,14 @@ $(document).ready(function(){
 
     google.maps.event.addListener(map, 'mousedown', function(){
       enableScrollingWithMouseWheel()
+    });
+
+    $('body').on('mousedown', function(event) {
+      var clickedInsideMap = $(event.target).parents('#map-canvas').length > 0;
+
+      if(!clickedInsideMap) {
+        disableScrollingWithMouseWheel();
+      }
     });
 
     map.fitBounds(markerBounds);

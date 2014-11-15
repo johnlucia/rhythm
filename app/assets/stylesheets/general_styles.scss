@@ -52,6 +52,7 @@ a{
     font-weight:bold;
     width:50%;
     float:left;
+    a{ color:#fff; }
   }
 
   div.head-wrap::after {
@@ -72,7 +73,7 @@ a{
     width:145px;
     padding:10px;
     cursor: pointer;
-    h3{color:#fff; font-size:20px; font-weight:bold; float:left; width:45%;}
+    h3{color:#fff; font-size:20px; font-weight:bold; float:left; width:45%; padding:5px 0;}
     span{
       display:block;
       float:right;
@@ -157,7 +158,18 @@ h3{color:red;}
     overflow: hidden;
   }
   .galleria-theme-classic .galleria-thumbnails .galleria-image.active{ opacity:0.5; }
+  .photo-caption {
+    position:absolute;
+    width: 100%;
+    text-align:center;
+    background-color:rgba(0,0,0, 0.5);
+    padding:3px;
+    color:#fff;
+
+  }
 }
+
+
 
 .map-link{
   display:block;
