@@ -4,3 +4,7 @@
   width:100%;
   div img{display:block; border-radius:5px;}
 }
+
+#big-map-page{
+  #page, #map-canvas{ max-width:100%; height:400px; padding:0;}
+}
