@@ -5,6 +5,10 @@
   div img{display:block; border-radius:5px;}
 }
 
+@media #{$tablet-break} {
+  #map-canvas{height:350px;}
+}
+
 .map-info-window{
   text-align:center;
   position:relative;
