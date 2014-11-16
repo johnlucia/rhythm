@@ -1,3 +1,9 @@
-<h3>ZZZZZZZZZ show.html.erb ZZZZZZZZZ</h3>
-<%= render '/refinery/content_page' %>
-<h3>ZZZZZZZZZ show.html.erb ZZZZZZZZZ</h3>
+<div class="main-content">
+  <%= raw(@page.content_for(:body)) %>
+</div>
+
+<div class="side-content">
+  <%= raw(@page.content_for(:side_body)) %>
+</div>
+
+<div class="googus"></div>
