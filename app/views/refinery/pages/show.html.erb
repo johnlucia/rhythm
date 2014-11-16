@@ -1,9 +1,11 @@
-<div class="main-content">
-  <%= raw(@page.content_for(:body)) %>
-</div>
+<div id="page-wrap">
+  <div class="main-content">
+    <%= raw(@page.content_for(:body)) %>
+  </div>
 
-<div class="side-content">
-  <%= raw(@page.content_for(:side_body)) %>
-</div>
+  <div class="side-content">
+    <%= raw(@page.content_for(:side_body)) %>
+  </div>
 
-<div class="googus"></div>
+  <div class="googus"></div>
+</div>
