@@ -23,4 +23,19 @@
   }
   .details{ font-weight:bold; }
   img.avatar{ display:none; }
+
+  #show_blog_post nav{font-weight:bold;}
+}
+
+@media #{$tablet-break} {
+  #blog-page{
+    #body{
+      width:100%;
+      float:left;
+    }
+    #side_body{
+      width:100%;
+      float:right;
+    }
+  } 
 }
