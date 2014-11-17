@@ -1,0 +1,26 @@
+#blog-page{
+  #body_content{
+    max-width:1000px;
+    margin:0 auto;
+    padding:60px 10px 10px 10px;
+  }
+
+  #body{
+    width:66%;
+    float:left;
+  }
+  #side_body{
+    width:33%;
+    float:right;
+    padding: 20px 5%;
+    background:#fff;
+  }
+
+  .blog_post{
+    padding:10px 0;
+    border-bottom: 1px solid #000;
+    footer{ text-align:left; }
+  }
+  .details{ font-weight:bold; }
+  img.avatar{ display:none; }
+}
