@@ -86,7 +86,14 @@ $(document).ready(function(){
       }
     });
 
+    mcOptions = {styles: [{height: 40, url: "/images/cluster1.png", width: 40},
+                          {height: 53, url: "/images/cluster2.png", width: 53},
+                          {height: 66, url: "/images/cluster3.png", width: 66},
+                          {height: 66, url: "/images/cluster3.png", width: 66},
+                          {height: 66, url: "/images/cluster3.png", width: 66}]}
+
     map.fitBounds(markerBounds);
-    var markerCluster = new MarkerClusterer(map, markers);
+    // var markerCluster = new MarkerClusterer(map, markers);
+    var markerCluster = new MarkerClusterer(map, markers, mcOptions);
   }
 });

@@ -8,7 +8,7 @@ html {
   background-size: cover;
 
   font-family: 'PT Sans Narrow', sans-serif;
-  font-size:18px;
+  font-size:20px;
 }
 
 h1{
@@ -31,6 +31,7 @@ h3{
 
 p{
   padding:5px 0;
+  line-height: 1.25;
 }
 
 a{
@@ -38,6 +39,8 @@ a{
   text-decoration: none;
   &:hover{ text-decoration: underline; }
 }
+
+strong{ font-weight:bold; }
 
 #page{
   width:100%;

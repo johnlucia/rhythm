@@ -1,1 +1,3 @@
 $tablet-break: "only screen and (max-width : 650px)";
+
+@mixin image-border() { border:2px solid #888; }
