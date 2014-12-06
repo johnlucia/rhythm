@@ -5,6 +5,7 @@
 <%= raw %(<link rel="canonical" href="#{request.protocol}#{request.host_with_port}#{@canonical}" />) if @canonical.present? -%>
 <%= csrf_meta_tags if Refinery::Core.authenticity_token_on_frontend -%>
 <%= yield :meta %>
+<link rel="shortcut icon" href="/boat.png">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
