@@ -26,6 +26,27 @@
   img.avatar{ display:none; }
 
   #show_blog_post nav{font-weight:bold;}
+
+  #comments{
+    padding:2em 0;
+    border-top:1px solid #000; 
+    .field{
+      padding:10px 0;
+      label{ display:block; }
+      input{ display:block; height:3em; width:250px; max-width:100%; }
+      textarea{ display:block; height:300px; width:400px; max-width:100%; }
+      input[type='submit']{
+        width:150px;
+        background:green;
+        color:#fff;
+        border:none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        &:hover{ opacity:0.7; cursor:pointer; }
+      }
+    }
+  }
 }
 
 @media #{$tablet-break} {
