@@ -34,6 +34,9 @@ class SocialFeedController < ApplicationController
     render json: images.to_json
   end
 
+  def youtube
+  end
+
   def combined
   end
 end

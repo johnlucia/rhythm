@@ -38,6 +38,7 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'twitter'
 gem 'instagram'
 gem 'httparty'
+gem 'google-api-client'
 
 group :development do
   gem "binding_of_caller"

@@ -1,4 +1,6 @@
-<p>
-  <%= t('.copyright', :year => Time.now.year,
+<div>
+  <%#= t('.copyright', :year => Time.now.year,
                       :site_name => Refinery::Core.site_name) %>
-</p>
+
+  <%= render partial: "social_buttons" %>
+</div>

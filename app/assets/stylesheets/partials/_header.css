@@ -5,8 +5,9 @@
   padding:0 10%;
   
   h1{
-    font-size:22px;
-    font-weight:bold;
+    font-family: 'Brush Script MT', cursive;
+    font-size:30px;
+    /*font-weight:bold;*/
     width:50%;
     float:left;
     a{ color:#fff; }
@@ -77,4 +78,5 @@
 
 @media #{$tablet-break} {
   #header nav.menu{width:80%;}
+  #header h1{font-size:22px;}
 }
