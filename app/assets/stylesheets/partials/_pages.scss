@@ -80,7 +80,7 @@
 
 .row1 img{float:left; margin:5px 5% 5px 0;}
 .row2 img{float:right; margin:5px 0 5px 5%;}
-.row3 img{float:left; margin:5px 5% 5px 0;}
+.row3 img{float:left; margin:5px 5% 5px 0; max-width:45%;}
 
 @media #{$tablet-break} {
   .row1, .row2, .row3{
