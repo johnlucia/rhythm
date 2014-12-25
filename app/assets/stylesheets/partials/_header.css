@@ -83,6 +83,8 @@
 
 @media #{$phone-break} {
   #header{ padding:0 3%; }
+  #header h1{ width: 60%; }
+  #header .menu-toggle{ width: 105px; }
   .menu-toggle{ max-width:30%; }
   .menu-toggle h3 { display:none; }
 }
