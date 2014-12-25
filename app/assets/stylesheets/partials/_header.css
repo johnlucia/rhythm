@@ -80,3 +80,9 @@
   #header nav.menu{width:80%;}
   #header h1{font-size:22px;}
 }
+
+@media #{$phone-break} {
+  #header{ padding:0 3%; }
+  .menu-toggle{ max-width:30%; }
+  .menu-toggle h3 { display:none; }
+}
