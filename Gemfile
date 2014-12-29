@@ -43,6 +43,7 @@ gem 'google-api-client'
 group :development do
   gem "binding_of_caller"
   gem "better_errors"
+  gem 'newrelic_rpm'
 end
 
 group :production do
