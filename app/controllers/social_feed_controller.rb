@@ -26,8 +26,8 @@ class SocialFeedController < ApplicationController
       image[:thumb] =  post['images']['thumbnail']['url']
       image[:big] =  post['images']['standard_resolution']['url']
       image[:layer] = "<div class='photo-caption'>#{post['caption']['text']}</div>" if post['caption']
-      image[:latitude] = post['location']['latitude']
-      image[:longitude] = post['location']['longitude']
+      image[:latitude] = post['location']['latitude'] if post['location']
+      image[:longitude] = post['location']['longitude'] if post['location']
       images << image
     end
 
