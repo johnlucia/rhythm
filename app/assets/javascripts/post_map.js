@@ -25,8 +25,8 @@ $(document).ready(function(){
       // console.log(post.latitude);
       // console.log(post.longitude);
       // console.log(post.thumb);
-      if (post.latitude == null || post.longitude == null)
-        continue 
+      if (post.latitude == null || post.longitude == null) { continue }
+
 
       var coordinates = new google.maps.LatLng(post.latitude, post.longitude)
 
