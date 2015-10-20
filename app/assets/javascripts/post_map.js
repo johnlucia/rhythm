@@ -11,62 +11,38 @@ $(document).ready(function(){
     var mapOptions = {
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       scrollwheel: false,
-      disableDefaultUI: true
+      disableDefaultUI: true,
+      center: {lat: 48.7454178, lng: -122.7829945},
+      zoom: 9
     };
 
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+    // var bhamToSucia = new google.maps.KmlLayer({
+    //   url: 'http://www.followrhythm.com/system/resources/W1siZiIsIjIwMTUvMTAvMjAvMTgvMjcvNTAvNTQ1L2JoYW1fdG9fc3VjaWEua21sIl1d/bham-to-sucia.kml?sha=5de28e4f9ef81724',
+    //   map: map
+    // });
+
+    setTimeout(function(){
+      var bhamToSucia = new google.maps.KmlLayer({
+        url: 'http://www.followrhythm.com/system/resources/W1siZiIsIjIwMTUvMTAvMjAvMTgvMjcvNTAvNTQ1L2JoYW1fdG9fc3VjaWEua21sIl1d/bham-to-sucia.kml?sha=5de28e4f9ef81724',
+        map: map
+      });
+    }, 2000);
     
-    var markers = [];
-    var infowindows = []
-    var currentInfowindow = 0
-
-    for(var i = 0; i < mapData.length; i++) {
-      var post = mapData[i];
-      // console.log(post.latitude);
-      // console.log(post.longitude);
-      // console.log(post.thumb);
-      if (post.latitude == null || post.longitude == null) { continue }
-
-
-      var coordinates = new google.maps.LatLng(post.latitude, post.longitude)
-
-      var markerImage = new google.maps.MarkerImage(
-        post.thumb,
-        null, 
-        null,  
-        null, 
-        new google.maps.Size(60, 60)
-      );
-
-      markers[i] = new google.maps.Marker({
-        position: coordinates,
-        icon: markerImage,
-        url: post.big,
-        map: map,
-        index: i
+    setTimeout(function(){
+      var hesquiatToHsc = new google.maps.KmlLayer({
+        url: 'http://www.followrhythm.com/system/resources/W1siZiIsIjIwMTUvMTAvMjAvMTgvMjcvNTAvNzU3L2hlc3F1aWF0X3RvX2hzYy5rbWwiXV0/hesquiat-to-hsc.kml?sha=92fa9d102aaddaaf',
+        map: map
       });
+    }, 7000);
 
-      var lat = Math.round(post.latitude * 100) / 100;
-      var lon = Math.round(post.longitude * 100) / 100;
-      var caption = post.layer
-      if(typeof post.layer === 'undefined'){
-        caption = ""  
-      };
-      var infowindowContent = "<div class='map-info-window'><img src='"+ post.small_image +"' />"+ caption +"<p>Lat:"+ lat +" Long:"+ lon +"</p></div>";
-      infowindows[i] = new google.maps.InfoWindow({
-        content: infowindowContent
+    setTimeout(function(){
+      var hscToFlores = new google.maps.KmlLayer({
+        url: 'http://www.followrhythm.com/system/resources/W1siZiIsIjIwMTUvMTAvMjAvMTgvMjcvNTAvNDcvaHNjX3RvX2Zsb3Jlcy5rbWwiXV0/hsc-to-flores.kml?sha=93e4c4695f3bf996',
+        map: map
       });
-      
-      google.maps.event.addListener(markers[i], 'click', function() {
-        infowindows[currentInfowindow].close()
-        currentInfowindow = this.index
-        infowindows[this.index].open(map,markers[this.index]);
-      });
-
-      if (i <= 5 || !$('#home-page').length) {
-        markerBounds.extend(coordinates);
-      }
-    }
+    }, 12000);
 
     function enableScrollingWithMouseWheel() {
       map.setOptions({ scrollwheel: true });
@@ -87,15 +63,5 @@ $(document).ready(function(){
         disableScrollingWithMouseWheel();
       }
     });
-
-    mcOptions = {styles: [{height: 40, url: "/images/cluster1.png", width: 40},
-                          {height: 53, url: "/images/cluster2.png", width: 53},
-                          {height: 66, url: "/images/cluster3.png", width: 66},
-                          {height: 66, url: "/images/cluster3.png", width: 66},
-                          {height: 66, url: "/images/cluster3.png", width: 66}]}
-
-    map.fitBounds(markerBounds);
-    // var markerCluster = new MarkerClusterer(map, markers);
-    var markerCluster = new MarkerClusterer(map, markers, mcOptions);
   }
 });
